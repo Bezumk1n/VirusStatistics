@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VirusStatistics.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{Binding Title}" Height="450" Width="800"
+        xmlns:VM="clr-namespace:VirusStatistics.WPF.ViewModels">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type VM:MainWindowVM}"/>
+    </Window.Resources>
     <Grid>
 
     </Grid>
