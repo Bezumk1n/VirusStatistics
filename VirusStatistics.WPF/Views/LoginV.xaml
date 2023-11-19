@@ -1,0 +1,16 @@
+﻿<Window x:Class="VirusStatistics.WPF.Views.LoginV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirusStatistics.WPF.Views"
+        mc:Ignorable="d"
+        Title="LoginV" Height="450" Width="800"
+        xmlns:VM="clr-namespace:VirusStatistics.WPF.ViewModels">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type VM:LoginVM}"/>
+    </Window.Resources>
+    <Grid>
+        
+    </Grid>
+</Window>

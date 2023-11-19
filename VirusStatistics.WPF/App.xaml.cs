@@ -30,8 +30,8 @@ namespace VirusStatistics.WPF
         {
             _host.Start();
 
-            Window window = _host.Services.GetRequiredService<MainWindowV>();
-            window.DataContext = _host.Services.GetRequiredService<MainWindowVM>();
+            Window window = _host.Services.GetRequiredService<LoginV>();
+            window.DataContext = _host.Services.GetRequiredService<LoginVM>();
             window.Show();
 
             base.OnStartup(e);

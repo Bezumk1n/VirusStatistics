@@ -18,6 +18,8 @@ namespace VirusStatistics.WPF
             // Фабрика ViewModel
             services.AddSingleton<Func<Type, BaseVM>>(serviceProvider => viewModelType => (BaseVM)serviceProvider.GetRequiredService(viewModelType));
 
+            services.AddSingleton<LoginV>();
+            services.AddSingleton<LoginVM>();
             services.AddSingleton<MainWindowV>();
             services.AddSingleton<MainWindowVM>();
             return services;
