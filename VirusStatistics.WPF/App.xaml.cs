@@ -22,7 +22,7 @@ namespace VirusStatistics.WPF
             host.ConfigureServices((context, services) =>
             {
                 // Конфигурация сервисов, добавляемых в DI
-
+                services.AddViews();
             });
             return host;
         }
