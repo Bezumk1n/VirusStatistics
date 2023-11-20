@@ -6,11 +6,34 @@
         xmlns:local="clr-namespace:VirusStatistics.WPF.Views"
         mc:Ignorable="d"
         Title="LoginV" Height="450" Width="800"
-        xmlns:VM="clr-namespace:VirusStatistics.WPF.ViewModels">
+        xmlns:VM="clr-namespace:VirusStatistics.WPF.ViewModels"
+        Background="Transparent">
     <Window.Resources>
         <DataTemplate DataType="{x:Type VM:LoginVM}"/>
     </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" CornerRadius="10,0,0,10" >
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="{StaticResource MainColor}" Offset="0"/>
+                    <GradientStop Color="{StaticResource MainColorSecondGradient}" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Polygon Points="0,20 120,100 0,200" Fill="{StaticResource Figures}"/>
+                <Polygon Points="100,250 200,300 150,360" Fill="{StaticResource Figures}"/>
+                <Ellipse Width="40" Height="40" Fill="{StaticResource Figures}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20"/>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Sign up" Style="{StaticResource TitleMain}"/>
+                    <TextBlock Text="Enter you personal info and create new account" Style="{StaticResource SubTitleMain}" Opacity="0.8"/>
+                    <Button Content="Sign up" Style="{StaticResource ButtonMain}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Grid.Column="1" CornerRadius="0,10,10,0" Background="{StaticResource MainBackground}"/>
     </Grid>
 </Window>
