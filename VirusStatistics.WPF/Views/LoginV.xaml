@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="LoginV" Height="450" Width="800"
         xmlns:VM="clr-namespace:VirusStatistics.WPF.ViewModels"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"  
+        AllowsTransparency="True" 
         Background="Transparent">
     <Window.Resources>
         <DataTemplate DataType="{x:Type VM:LoginVM}"/>
@@ -28,12 +32,45 @@
                 <Polygon Points="100,250 200,300 150,360" Fill="{StaticResource Figures}"/>
                 <Ellipse Width="40" Height="40" Fill="{StaticResource Figures}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20"/>
                 <StackPanel VerticalAlignment="Center">
-                    <TextBlock Text="Sign up" Style="{StaticResource TitleMain}"/>
-                    <TextBlock Text="Enter you personal info and create new account" Style="{StaticResource SubTitleMain}" Opacity="0.8"/>
-                    <Button Content="Sign up" Style="{StaticResource ButtonMain}"/>
+                    <TextBlock Text="Sign up" Style="{StaticResource TitleMainTransparent}"/>
+                    <TextBlock Text="Enter you personal info and create new account" Style="{StaticResource SubTitleMainTransparent}" Opacity="0.8"/>
+                    <Button Content="Sign up" Style="{StaticResource ButtonMainTransparent}"/>
                 </StackPanel>
             </Grid>
         </Border>
-        <Border Grid.Column="1" CornerRadius="0,10,10,0" Background="{StaticResource MainBackground}"/>
+        <Border Grid.Column="1" CornerRadius="0,10,10,0" Background="{StaticResource MainBackground}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Command="{Binding CommandCloseApplication}" Style="{StaticResource CloseButton}" HorizontalAlignment="Right"/>
+                <StackPanel Grid.RowSpan="2" VerticalAlignment="Center">
+                    <TextBlock Text="Sign in to App" Style="{StaticResource TitleMain}"/>
+                    <Border BorderThickness="1" BorderBrush="{StaticResource MainText}" CornerRadius="5" Width="400" Margin="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <md:PackIcon Grid.Column="0" Kind="EmailOutline" Foreground="{StaticResource MainText}" Height="40" Width="40" Margin="0,0,2,0"/>
+                            <TextBox Grid.Column="1" Style="{StaticResource TextBox}"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="{StaticResource MainText}" CornerRadius="5" Width="400" Margin="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <md:PackIcon Grid.Column="0" Kind="KeyOutline" Foreground="{StaticResource MainText}" Height="40" Width="40" Margin="2,0,0,0"/>
+                            <PasswordBox Grid.Column="1" Style="{StaticResource TextBox}"/>
+                        </Grid>
+                    </Border>
+                    <Button Content="Sign up" Style="{StaticResource ButtonMain}" />
+                </StackPanel>
+            </Grid>
+
+        </Border>
     </Grid>
 </Window>

@@ -26,7 +26,7 @@ namespace VirusStatistics.WPF
             });
             return host;
         }
-        protected override async void OnStartup(StartupEventArgs e)
+        protected override void OnStartup(StartupEventArgs e)
         {
             _host.Start();
 
