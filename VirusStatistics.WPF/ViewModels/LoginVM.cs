@@ -12,10 +12,27 @@ namespace VirusStatistics.WPF.ViewModels
 {
     internal class LoginVM : BaseVM
     {
+        public bool IsSignInView
+        {
+            get => _isSignInView;
+            set
+            {
+                _isSignInView = value;
+                OnPropertyChanged();
+                OnPropertyChanged(() => IsSignUpView);
+            }
+        }
+        private bool _isSignInView = true;
+        public bool IsSignUpView => !IsSignInView;
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
         public ICommand CommandCloseApplication { get; }
+        public ICommand CommandSignUp { get; }
         public LoginVM()
         {
             CommandCloseApplication = new DelegateCommand(x => Application.Current.Shutdown());
+            CommandSignUp = new DelegateCommand(x => IsSignInView = !IsSignInView);
         }
     }
 }

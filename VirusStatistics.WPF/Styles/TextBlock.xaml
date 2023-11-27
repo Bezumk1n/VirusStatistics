@@ -18,4 +18,10 @@
     <Style x:Key="SubTitleMainTransparent" TargetType="TextBlock" BasedOn="{StaticResource SubTitleMain}">
         <Setter Property="Foreground" Value="{StaticResource MainBackground}"/>
     </Style>
+    <Style x:Key="TextBoxTooltip" TargetType="TextBlock" BasedOn="{StaticResource SubTitleMain}">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Opacity" Value="0.5"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="TextAlignment" Value="Left"/>
+    </Style>
 </ResourceDictionary>

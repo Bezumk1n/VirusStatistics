@@ -11,7 +11,8 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"  
         AllowsTransparency="True" 
-        Background="Transparent">
+        Background="Transparent"
+        xmlns:controls="clr-namespace:VirusStatistics.WPF.CustomControls">
     <Window.Resources>
         <DataTemplate DataType="{x:Type VM:LoginVM}"/>
     </Window.Resources>
@@ -31,10 +32,14 @@
                 <Polygon Points="0,20 120,100 0,200" Fill="{StaticResource Figures}"/>
                 <Polygon Points="100,250 200,300 150,360" Fill="{StaticResource Figures}"/>
                 <Ellipse Width="40" Height="40" Fill="{StaticResource Figures}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20"/>
-                <StackPanel VerticalAlignment="Center">
+                <StackPanel VerticalAlignment="Center" Visibility="{Binding IsSignInView, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <TextBlock Text="Sign up" Style="{StaticResource TitleMainTransparent}"/>
                     <TextBlock Text="Enter you personal info and create new account" Style="{StaticResource SubTitleMainTransparent}" Opacity="0.8"/>
-                    <Button Content="Sign up" Style="{StaticResource ButtonMainTransparent}"/>
+                    <Button Content="Sign up" Style="{StaticResource ButtonMainTransparent}" Command="{Binding CommandSignUp}"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" Visibility="{Binding IsSignUpView, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <TextBlock Text="Sign up" Style="{StaticResource TitleMainTransparent}"/>
+                    <TextBlock Text="Enter you personal info and create new account" Style="{StaticResource SubTitleMainTransparent}" Opacity="0.8"/>
                 </StackPanel>
             </Grid>
         </Border>
@@ -45,7 +50,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Button Grid.Row="0" Command="{Binding CommandCloseApplication}" Style="{StaticResource CloseButton}" HorizontalAlignment="Right"/>
-                <StackPanel Grid.RowSpan="2" VerticalAlignment="Center">
+                <StackPanel Grid.RowSpan="2" VerticalAlignment="Center" Visibility="{Binding IsSignInView, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <TextBlock Text="Sign in to App" Style="{StaticResource TitleMain}"/>
                     <Border BorderThickness="1" BorderBrush="{StaticResource MainText}" CornerRadius="5" Width="400" Margin="3">
                         <Grid>
@@ -68,6 +73,13 @@
                         </Grid>
                     </Border>
                     <Button Content="Sign in" Style="{StaticResource ButtonMain}" />
+                </StackPanel>
+                <StackPanel Grid.RowSpan="2" VerticalAlignment="Center" Visibility="{Binding IsSignUpView, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <TextBlock Text="Sign up to App" Style="{StaticResource TitleMain}"/>
+                    <controls:TextBoxWithTopTooltip _ToolTip ="Username" _Text="{Binding Username, Mode=TwoWay}"/>
+                    <controls:TextBoxWithTopTooltip _ToolTip="Email" _Text="{Binding Email, Mode=TwoWay}"/>
+                    <controls:PasswordBoxWithTopTooltip _ToolTip="Password" _Text="{Binding Password, Mode=TwoWay}"/>
+                    <Button Content="Sign up" Style="{StaticResource ButtonMain}" />
                 </StackPanel>
             </Grid>
 
