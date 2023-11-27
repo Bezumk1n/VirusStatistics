@@ -15,7 +15,7 @@
     <Window.Resources>
         <DataTemplate DataType="{x:Type VM:LoginVM}"/>
     </Window.Resources>
-    <Grid>
+    <Grid MouseDown="Grid_MouseDown">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="3*"/>
@@ -67,7 +67,7 @@
                             <PasswordBox Grid.Column="1" Style="{StaticResource TextBox}"/>
                         </Grid>
                     </Border>
-                    <Button Content="Sign up" Style="{StaticResource ButtonMain}" />
+                    <Button Content="Sign in" Style="{StaticResource ButtonMain}" />
                 </StackPanel>
             </Grid>
 
