@@ -20,18 +20,20 @@ namespace VirusStatistics.Domain.Common
         }
         #endregion
         #region Methods
-        public static Result Success() => new(true, Error.None);
-        public static Result<TValue> Success<TValue>(TValue value) => new(value, true, Error.None);
-        public static Result Failure(Error error) => new(false, error);
-        public static Result<TValue> Failure<TValue>(Error error) => new (default, false, error);
+        public static Result Success() => new Result(true, Error.None);
+        public static Result<TValue> Success<TValue>(TValue value) => new Result<TValue>(value, true, Error.None);
+        public static Result Failure(Error error) => new Result(false, error);
+        public static Result<TValue> Failure<TValue>(Error error) => new Result<TValue>(default, false, error);
         #endregion
     }
     public class Result<TValue> : Result
     {
-        public TValue Value { get; }
-        public Result(TValue tValue, bool value, Error error) : base(value, error)
+        private readonly TValue? _value;
+        public TValue Value => IsSuccess ? _value! : throw new InvalidOperationException("The value of a failure can't be accessed");
+        protected internal Result(TValue? tValue, bool isSuccess, Error error) : base(isSuccess, error)
         {
-            Value = tValue;
+            _value = tValue;
         }
+        public static implicit operator Result<TValue>(TValue? value) => value is not null ? Success<TValue>(value) : Failure<TValue>(Error.NullValue);
     }
 }
