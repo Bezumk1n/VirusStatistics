@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using VirusStatistics.Application.Users.Queries.GetUserById;
 using VirusStatistics.WPF.Common;
 using VirusStatistics.WPF.Common.Commands;
 
@@ -31,7 +32,7 @@ namespace VirusStatistics.WPF.ViewModels
         public ICommand CommandSignUp { get; }
         public LoginVM()
         {
-            CommandCloseApplication = new DelegateCommand(x => Application.Current.Shutdown());
+            CommandCloseApplication = new DelegateCommand(x => System.Windows.Application.Current.Shutdown());
             CommandSignUp = new DelegateCommand(x => IsSignInView = !IsSignInView);
         }
     }
