@@ -9,15 +9,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7C0E4733-4D1A-41C8-BBF6-12A068EED5EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirusStatistics.WPF", "VirusStatistics.WPF\VirusStatistics.WPF.csproj", "{7A0CC835-3A31-4705-BDFC-89CF89966725}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirusStatistics.WPF", "VirusStatistics.WPF\VirusStatistics.WPF.csproj", "{7A0CC835-3A31-4705-BDFC-89CF89966725}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirusStatistics.Application", "VirusStatistics.Application\VirusStatistics.Application.csproj", "{C394B5F3-4E60-46AC-B070-E9AEBBDAF901}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirusStatistics.Application", "VirusStatistics.Application\VirusStatistics.Application.csproj", "{C394B5F3-4E60-46AC-B070-E9AEBBDAF901}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirusStatistics.Domain", "VirusStatistics.Domain\VirusStatistics.Domain.csproj", "{9B632951-382B-4410-81B5-B49FD1BD675A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirusStatistics.Domain", "VirusStatistics.Domain\VirusStatistics.Domain.csproj", "{9B632951-382B-4410-81B5-B49FD1BD675A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirusStatistics.Persistance", "VirusStatistics.Persistance\VirusStatistics.Persistance.csproj", "{A8B105C4-5EB9-4928-B0F2-CC9126E809A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirusStatistics.Persistance", "VirusStatistics.Persistance\VirusStatistics.Persistance.csproj", "{A8B105C4-5EB9-4928-B0F2-CC9126E809A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirusStatistics.Services", "VirusStatistics.Services\VirusStatistics.Services.csproj", "{F2EEDBB5-74A5-473C-B329-CF56E0CCA64C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirusStatistics.Services", "VirusStatistics.Services\VirusStatistics.Services.csproj", "{F2EEDBB5-74A5-473C-B329-CF56E0CCA64C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{163A38B9-BC10-43A2-9E2E-345A92E912B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirusStatistics.xUnitTests", "VirusStatistics.xUnitTests\VirusStatistics.xUnitTests.csproj", "{50D23B6D-56F0-4EC0-9697-EB0770F8D10C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{F2EEDBB5-74A5-473C-B329-CF56E0CCA64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2EEDBB5-74A5-473C-B329-CF56E0CCA64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2EEDBB5-74A5-473C-B329-CF56E0CCA64C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D23B6D-56F0-4EC0-9697-EB0770F8D10C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D23B6D-56F0-4EC0-9697-EB0770F8D10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D23B6D-56F0-4EC0-9697-EB0770F8D10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D23B6D-56F0-4EC0-9697-EB0770F8D10C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,7 @@ Global
 		{9B632951-382B-4410-81B5-B49FD1BD675A} = {28397D57-D9FB-46CA-A448-E2FA054FCAA2}
 		{A8B105C4-5EB9-4928-B0F2-CC9126E809A5} = {893894A5-49F7-45C5-8A57-0E2EC1CE560F}
 		{F2EEDBB5-74A5-473C-B329-CF56E0CCA64C} = {893894A5-49F7-45C5-8A57-0E2EC1CE560F}
+		{50D23B6D-56F0-4EC0-9697-EB0770F8D10C} = {163A38B9-BC10-43A2-9E2E-345A92E912B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {85008AB6-4CE0-4162-8A54-830326A3DBB5}
